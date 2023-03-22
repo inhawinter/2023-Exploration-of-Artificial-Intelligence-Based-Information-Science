@@ -1,9 +1,13 @@
-# week03_prime_number quiz
-start_no = int(input("Enter starting number : "))
-end_no = int(input("Enter ending number : "))
+# week03 prime_number v0.8
+# numbers = input("Enter starting number and ending number : ").split()
+# print(numbers)
+# start_no = int(numbers[0])
+# end_no = int(numbers[1])
+start_no, end_no = input("Enter starting number and ending number : ").split()
+
 is_prime = True
 
-for k in range(start_no, end_no+1):
+for k in range(int(start_no), int(end_no)+1):
     is_prime = True
     if k < 2:
         is_prime = False
@@ -14,5 +18,3 @@ for k in range(start_no, end_no+1):
                 break
         if is_prime:
             print(k, end=' ')
-
-
