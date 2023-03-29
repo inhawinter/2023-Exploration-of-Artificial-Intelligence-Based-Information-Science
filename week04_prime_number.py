@@ -1,6 +1,6 @@
 # week04 prime_number v1.1
 # add is_prime function
-# Bo Gyung Kimgit
+# Bo Gyung Kim
 
 def is_prime(n) -> bool:
     """
