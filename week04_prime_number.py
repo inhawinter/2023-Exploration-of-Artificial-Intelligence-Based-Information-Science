@@ -1,5 +1,6 @@
-# week04 prime_number v1.0
+# week04 prime_number v1.1
 # add is_prime function
+# Lee EunHwan
 
 def is_prime(n) -> bool:
     """
@@ -15,8 +16,10 @@ def is_prime(n) -> bool:
                 return False
     return True
 
-
 start_no, end_no = map(int, input("Enter starting number and ending number : ").split())
+
+if start_no > end_no:
+    start_no, end_no = end_no, start_no
 
 for k in range(start_no, end_no+1):
     if is_prime(k):
