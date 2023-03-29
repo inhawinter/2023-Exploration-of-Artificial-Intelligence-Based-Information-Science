@@ -1,11 +1,10 @@
 # week04 prime_number v1.1
 # add is_prime function
 # feat youngju
-k=0
 def is_prime(n) -> bool:
     """
     Check prime number
-    :param n: integer number
+    :param n: integeumber
     :return: True (if number is prime number) / False (if number is NOT prime number)
     """
     if k < 2:
@@ -16,7 +15,7 @@ def is_prime(n) -> bool:
                 return False
     return True
 
-
+k=0
 start_no, end_no = map(int, input("Enter starting number and ending number : ").split())
 if start_no > end_no:
     k=start_no
