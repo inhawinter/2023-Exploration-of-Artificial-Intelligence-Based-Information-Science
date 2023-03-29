@@ -1,6 +1,9 @@
 # week04 prime_number v1.1
+<<<<<<< HEAD
 # add is_prime function
 # Lee EunHwan
+=======
+>>>>>>> b3804397485f0824684868014c5871e78339f536
 
 def is_prime(n) -> bool:
     """
@@ -18,8 +21,12 @@ def is_prime(n) -> bool:
 
 start_no, end_no = map(int, input("Enter starting number and ending number : ").split())
 
+<<<<<<< HEAD
 if start_no > end_no:
     start_no, end_no = end_no, start_no
+=======
+if start_no > end_no : start_no, end_no = end_no, start_no
+>>>>>>> b3804397485f0824684868014c5871e78339f536
 
 for k in range(start_no, end_no+1):
     if is_prime(k):
