@@ -1,4 +1,4 @@
-# week04 prime_number v1.1
+# week04 prime_number v1.2
 # add is_prime function
 # Lee EunHwan
 
