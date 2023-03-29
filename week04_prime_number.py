@@ -15,7 +15,7 @@ def is_prime(n) -> bool:
                 return False
     return True
 
-k=0
+k = 0
 start_no, end_no = map(int, input("Enter starting number and ending number : ").split())
 if start_no > end_no:
     k=start_no
