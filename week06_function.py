@@ -1,23 +1,38 @@
 # week06_function.py
-def my_generator(first=0, last=10, step=1):
+# before decorator
+import time
+
+def factorial(n):
     """
-    generator
-    :param first: starting value, (default : 0)
-    :param last:  ending value, (default : 10)
-    :param step: step value, (default : 1)
-    :return: generated values
+    factorial function
+    :param n: more than zero
+    :return: n!
     """
-    n = first
-    while n < last:
-        yield n
-        n = n + step
+    s = time.time()
+    result = 1
+    for k in range(1, n+1):
+        result = result * k
+    e = time.time()
+    print(f'총 수행시간은 {e-s}초 입니다')
+    return result
 
 
-ranger = my_generator(5, 10)
-for k in ranger:
-    print(k, end=' ')
+def power(b, e):
+    """
+    power function
+    :param b: base, ex) 2
+    :param e: exponent, ex) 10
+    :return: ex) 2 to the 10th power is 1024.
+    """
+    s = time.time()
+    result = 1
+    for _ in range(e):
+        result = result * b
+    e = time.time()
+    print(f'총 수행시간은 {e-s}초 입니다')
+    return result
 
-for k in ranger:
-    print(k, end=' ')
 
+print(power(2, 10))
+print(factorial(1000))
 
