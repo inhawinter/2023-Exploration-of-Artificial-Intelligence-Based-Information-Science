@@ -12,20 +12,35 @@ class Pokemon:
         print(f"{self.name} launches an area attack.")
 
 
+    def attack_target(self, target):
+        print(f"{self.name} attacks {target}!")
+
+
+
 class Pikachu(Pokemon):  # is-a relationship, inheritance
     def attack(self):
         print(f"{self.name} launches an area-of-effect electric attack.")
+
+
+    def attack_target(self, target):
+        print(f"{self.name} launches an electric attack on {target}!")
 
 
 class Squirtle(Pokemon):
     def attack(self):
         print(f"{self.name} casts a wide-area water cannon attack.")
 
+    def attack_target(self, target):
+        print(f"{self.name} casts a water cannon attack on {target}!")
+
 
 class Charizard(Pokemon):
     def attack(self):  # derived class method, override
         super().attack()  # base class method
         print(f"{self.name} casts a wide-area fire attack.")
+
+    def attack_target(self, target):
+        print(f"{self.name} casts a fire attack on {target}!")
 
 
 class Digimon:
@@ -40,6 +55,8 @@ if __name__ == "__main__":
     charizard = Charizard("charizard", 36, 78)
     charizard.say()
 
+
+    pikachu.attack_target(squirtle.name)
     charizard.attack()
     pikachu.attack()
     squirtle.attack()
