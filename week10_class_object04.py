@@ -8,14 +8,25 @@ class PrettyMixin:
 
 
 class Pokemon(PrettyMixin):
-    def __init__(self, name, hp, level):
-        self.name = name
+    def __init__(self, input_name, hp, level):
+        self.hidden_name = input_name
         self.hp = hp
         self.level = level
 
+
+    def get_name(self):
+        print("getter executed!")
+        return self.hidden_name
+
+
+    def set_name(self, input_name):
+        print("setter executed!")
+        self.hidden_name = input_name
+
+
     def info(self):
         print("================")
-        print(f"Name : {self.name}")
+        print(f"Name : {self.hidden_name}")
         print(f"Hp : {self.hp}")
         print(f"Level : {self.level}")
         print("================")
@@ -27,4 +38,9 @@ if __name__ == "__main__":
     p2.info()  # Pokemon.info(p2)
     p1.dump()
     p2.dump()
+    p2.level = 2  # direct access
+    p2.info()
+    p2.set_name("wartortle")  # by getter
+    print(p2.get_name())  # by setter
+
 
