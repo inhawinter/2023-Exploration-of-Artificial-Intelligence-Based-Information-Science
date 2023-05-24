@@ -1,17 +1,24 @@
-# week10_class_object04
+# week10_class_object05
 
-class PrettyMixin:
-    def dump(self):
-        # print(f'{self.name} pokemon')
-        import pprint
-        pprint.pprint(vars(self))
+class Pokemon:
+    pokemon_count = 0
 
-
-class Pokemon(PrettyMixin):
     def __init__(self, input_name, hp, level):
         self.__name = input_name
         self.hp = hp
         self.level = level
+        Pokemon.pokemon_count = Pokemon.pokemon_count + 1
+
+    @staticmethod
+    def intro():
+        print("ISHS Pokemon Game")
+
+
+    @classmethod
+    def print_pokemon_count(cls):
+        # print(f"pokemon population : {Pokemon.pokemon_count}")
+        print(f"pokemon population : {cls.pokemon_count}")
+
 
     @property
     def name(self):
@@ -33,12 +40,9 @@ class Pokemon(PrettyMixin):
 
 
 if __name__ == "__main__":
+    Pokemon.intro()
     p1 = Pokemon("pikachu", 35, 1)
     p2 = Pokemon("squirtle", 40, 1)
-    p2.info()  # Pokemon.info(p2)
-    p1.dump()
-    p2.dump()
-    p2.level = 2  # direct access
-    p2.info()
-    print(p2._Pokemon__name)  # doesn’t make it completely private
-
+    p3 = Pokemon("charizard", 85, 36)
+    print(Pokemon.pokemon_count)
+    Pokemon.print_pokemon_count()
