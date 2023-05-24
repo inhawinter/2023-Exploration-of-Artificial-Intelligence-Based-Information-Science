@@ -9,6 +9,24 @@ class Pokemon:
         self.level = level
         Pokemon.pokemon_count = Pokemon.pokemon_count + 1
 
+    def __add__(self, other):
+        """
+        both pokemon's total hp & level
+        :param other:
+        :return:
+        """
+        return f'total hp : {self.hp + other.hp}, total level : {self.level + other.level}'
+
+
+    def __str__(self):
+        """
+        <__main__.Pokemon object at 0x000001BB5B41DA90>
+        to
+        I'm a [Pokemon name]!
+        :return:
+        """
+        return f"I'm a {self.__name}!"
+
     @staticmethod
     def intro():
         print("ISHS Pokemon Game")
@@ -40,9 +58,14 @@ class Pokemon:
 
 
 if __name__ == "__main__":
-    Pokemon.intro()
+    Pokemon.intro()  # static method
     p1 = Pokemon("pikachu", 35, 1)
     p2 = Pokemon("squirtle", 40, 1)
     p3 = Pokemon("charizard", 85, 36)
-    print(Pokemon.pokemon_count)
-    Pokemon.print_pokemon_count()
+    print(Pokemon.pokemon_count)  # class field
+    Pokemon.print_pokemon_count()  # class method
+    print(p1 + p2)  # __add__
+    # __str__
+    print(p3)
+    print(p1)
+
