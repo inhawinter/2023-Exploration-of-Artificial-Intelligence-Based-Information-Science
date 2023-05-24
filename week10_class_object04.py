@@ -40,11 +40,4 @@ if __name__ == "__main__":
     p2.dump()
     p2.level = 2  # direct access
     p2.info()
-    print(p2.__name)  # hidden but it isn't private like other oop language
-    """
-        print(p2.__name)
-          ^^^^^^^^^
-        AttributeError: 'Pokemon' object has no attribute '__name'. Did you mean: 'name'?
-    """
-
-
+    print(p2._Pokemon__name)  # doesn’t make it completely private
