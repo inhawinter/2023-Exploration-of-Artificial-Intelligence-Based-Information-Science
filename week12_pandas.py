@@ -13,4 +13,12 @@ data2 = [
 df1 = pd.DataFrame(data1, index=[1, 2, 3])
 df2 = pd.DataFrame(data2, index=[1, 2, 3], columns=["a", "b", "c"])
 print(df1)
-print(df2)
+df3 = df1\
+    .melt()\
+    .rename(columns={
+        'variable': 'var',
+        'value': 'val'
+    })\
+    .query('val > 10')
+print(df3)
+
