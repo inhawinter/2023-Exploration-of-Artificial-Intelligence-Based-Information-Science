@@ -17,3 +17,12 @@ df2 = pd.DataFrame(data2, index=[1, 2, 3], columns=["a", "b", "c"])
 
 print(df1)
 print(df2)
+df3 = df1.melt().rename(columns={
+    'variable': 'var',
+    'value': 'val'
+})\
+    .sort_values('val', ascending=False)\
+    .query('val > 10')
+print(df3)
+print(df1.drop(columns=['b']))
+print(df1)
