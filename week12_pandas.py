@@ -19,6 +19,10 @@ df3 = df1\
         'variable': 'var',
         'value': 'val'
     })\
+    .sort_values('val', ascending=False)\
     .query('val > 10')
+
 print(df3)
+print(df1.drop(columns=['b']))
+print(df1)
 
